@@ -11,10 +11,9 @@
     right: 0;
     bottom: 0;
     display: flex;
-    @include max600 {
-      img{
-        width: 100%;
-      }
+
+    img{
+      width: 100%;
     }
   }
 

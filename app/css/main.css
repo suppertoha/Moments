@@ -744,10 +744,8 @@ a:hover {
   display: -ms-flexbox;
   display: flex;
 }
-@media (max-width: 600px) {
-  .main__bg img {
-    width: 100%;
-  }
+.main__bg img {
+  width: 100%;
 }
 .main__inner {
   position: relative;
@@ -1164,6 +1162,12 @@ a:hover {
   justify-content: center;
   grid-auto-rows: 1fr;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+@media screen and (min-width: 2000px) {
+  .advantages-section__items {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 @media screen and (max-width: 1700px) {
   .advantages-section__items {
