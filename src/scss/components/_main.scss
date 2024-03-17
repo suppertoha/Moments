@@ -1,0 +1,94 @@
+.main {
+  position: relative;
+  background: rgba(35, 35, 35, 0.15);
+  @include max600 {
+    min-height: 550px;
+  }
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    @include max600 {
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 10;
+    padding-top: 180px;
+    padding-bottom: 210px;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include max1440 {
+      padding-top: 125px;
+      padding-bottom: 160px;
+    }
+
+
+    @include max1280 {
+      padding-top: 105px;
+      padding-bottom: 135px;
+    }
+
+    @include max600 {
+      padding-bottom: 0;
+      padding-top: 95%;
+      text-align: right;
+    }
+  }
+
+  &__content {
+    position: relative;
+    max-width: 687px;
+    padding-top: 45px;
+    padding-bottom: 30px;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      background: url(../img/main-blur.svg);
+    }
+
+    @include max1440 {
+      max-width: 520px;
+      padding-bottom: 15px;
+    }
+
+    @include max600 {
+      margin-left: auto;
+    }
+  }
+
+  &__decor{
+    margin-left: -45px;
+    margin-top: 45px;
+
+    @include max1440 {
+      margin-left: -34px;
+      margin-top: 35px;
+    }
+
+    @include max1280 {
+      margin-left: -30px;
+    }
+
+    @include max600 {
+      display: none;
+    }
+  }
+
+}
+
+

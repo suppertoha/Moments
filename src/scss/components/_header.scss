@@ -1,0 +1,180 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  transition: 0.3s;
+
+  &.active {
+    width: 100%;
+    background: url(../img/bg-main.jpg);
+    box-shadow: 0px 1px 5px 3px rgba(227, 222, 216, 0.39);
+  }
+
+  .burger {
+    @include burger;
+    width: 50px;
+    height: 30px;
+
+    @include max1440 {
+      width: 37px;
+      &::before,
+      &::after {
+        width: 37px;
+      }
+    }
+
+
+    @include max1280 {
+      width: 33px;
+      &::before,
+      &::after {
+        width: 33px;
+      }
+
+      &::before{
+        top: calc(50% - 13px);
+      }
+
+      &::after{
+        top: calc(50% + 8px);
+      }
+    }
+
+
+    &.burger--active {
+      z-index: 101;
+      &::before,
+      &::after {
+
+        @media screen and (min-width: 1024px) {
+          &:hover {
+            color: var(--hover-gold);
+          }
+        }
+      }
+      @media (max-width: 1280px){
+        &::after {
+          top: calc(50% + -5px);
+        }
+
+        &::before {
+          top: calc(50% - 5px);
+        }
+
+      }
+
+    }
+
+    @media screen and (min-width: 1024px) {
+      &:hover {
+        span {
+          background: var(--hover-gold);
+        }
+        &::before,
+        &::after {
+          color: var(--hover-gold);
+        }
+      }
+    }
+  }
+
+  &__inner {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    @include max991 {
+      display: none;
+    }
+  }
+
+  &__list {
+    margin: 100px 0px;
+    margin-bottom: auto;
+    width: 80%;
+    @include max1280 {
+      margin: 60px 0px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link {
+    font-size: 32px;
+    white-space: nowrap;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    transition: 0.3s;
+    flex-shrink: 0;
+    transition: 0.3s;
+    color: var(--light-color);
+
+    @include max1366 {
+      font-size: 14px;
+    }
+
+    @media screen and (min-width: 1024px) {
+    }
+  }
+}
+
+.nav {
+  @include max600 {
+    .logo {
+      width: 105px;
+      height: 29px;
+    }
+  }
+
+  &__container {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+
+    @include max600 {
+      padding: 15px 15px 40px 15px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 60px 0;
+
+    @include max1440 {
+      padding: 45px 0;
+    }
+
+    @include max1280 {
+      padding: 40px 0;
+    }
+
+    @include max600 {
+      padding: 20px 0;
+    }
+  }
+
+  &__block {
+    display: none;
+    background: url(../img/bg-main.jpg);
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 70%;
+
+    &.menu--active {
+      display: block;
+    }
+  }
+}

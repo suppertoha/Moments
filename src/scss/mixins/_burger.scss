@@ -1,0 +1,72 @@
+/* stylelint-disable */
+
+@mixin burger {
+  --burger-width: 50px;
+  --burger-height: 30px;
+  --burger-line-height: 3px;
+
+  position: relative;
+  border: none;
+  padding: 0;
+  width: var(--burger-width);
+  height: var(--burger-height);
+  color: #000;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    //left: calc(50% - 8px);
+    left: 0;
+    width: 50px;
+    height: var(--burger-line-height);
+    background-color: currentColor;
+    border-radius: 100px;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    transform: translateY(-50%, -50%);
+    border-radius: 12px;
+    color: var(--light-color);
+    transition: 0.3s;
+  }
+
+  &::before {
+    top: calc(50% - 17px);
+  }
+
+  &::after {
+    top: calc(50% + 11px);
+  }
+
+  &__line {
+    display: block;
+    width: 100%;
+    height: var(--burger-line-height);
+    background-color: currentColor;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 12px;
+    color: var(--light-color);
+    transition: 0.3s;
+  }
+
+  &--active {
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg);
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    .burger__line {
+      transform: scale(0);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}

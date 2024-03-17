@@ -1,0 +1,67 @@
+.questions-section {
+  background: url(../img/grey-bg.jpg);
+
+  &__inner {
+  }
+
+  &__title {
+    letter-spacing: -0.025em;
+    line-height: 1;
+    margin-bottom: 45px;
+    @include max600 {
+    margin-bottom: 20px;
+    }
+  }
+
+  &__items {
+    margin-bottom: 20px;
+
+    @include max1440 {
+      margin-bottom: 40px;
+    }
+
+    @include max600 {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      span{
+        border-bottom: 2px solid #232323;
+
+        @include max600 {
+        border-bottom: none;
+        }
+      }
+
+    }
+    span {
+      display: block;
+      padding: 87px 0;
+
+
+      @include max1440 {
+        padding: 63px 0;
+      }
+
+      @include max1280 {
+        padding: 58px 0;
+      }
+
+      @include max768 {
+        padding: 22px 0;
+      }
+
+      @include max600 {
+        padding: 22px 0;
+        font-size: 16px;
+      }
+    }
+
+  }
+
+  &__btn{
+    margin: 0 auto;
+  }
+}
